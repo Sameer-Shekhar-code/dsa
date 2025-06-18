@@ -21,6 +21,28 @@ public class LL {
         }
     }
 
+    public Node insertRec(int val, int index){
+        head = insertRec(head, index, val);
+        return head;
+    }
+
+    public Node insertRec(Node node, int index, int val){
+        if(index == 0){
+            Node temp = new Node(val);
+            temp.next = node;
+            size++;
+            return temp;
+
+        }
+        if(node == null){
+            return null;
+        }
+
+        node.next = insertRec(node.next,index-1,val);
+        return null;
+
+    }
+
     public void insertFirst(int value){
         Node node=new Node(value);
         node.next = head;
