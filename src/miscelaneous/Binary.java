@@ -9,6 +9,7 @@ public class Binary {
         int d= Integer.parseInt(b);
 
         int sum= c+d;
+        System.out.println(sum);
 
 
     }
