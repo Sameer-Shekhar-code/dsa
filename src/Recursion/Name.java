@@ -1,19 +1,19 @@
 package Recursion;
 
 public class Name {
-    public static void main(String[] args) {
-        f(0);
-    }
 
-    static void f(int count){
+    public static void name(String name, int count){
 
-        if(count == 5){
+
+        if(count==0){
             return;
         }
-        String name= " Sameer ";
         System.out.println(name);
-        count++;
-        f(count);
+        name(name, count-1);
 
+    }
+    public static void main(String[] args) {
+        int count = 5;
+        name("Sameer",count);
     }
 }

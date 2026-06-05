@@ -2,10 +2,15 @@ package Recursion;
 
 public class OnetoN {
     public static void main(String[] args) {
-        f(5);
+        int count = 1;
+        f(5, count);
     }
-    static void f(int n){
+    static void f(int n, int count){
+        if(count >n){
+            return;
+        }
 
-        System.out.println();
+        f(n, count+1);
+        System.out.println(count);
     }
 }

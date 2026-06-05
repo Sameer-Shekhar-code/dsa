@@ -1,13 +1,23 @@
 package Recursion;
 
+import java.util.Arrays;
+
 public class Fibonacci_2 {
     public static void main(String[] args) {
-        System.out.println(fibonacci(4));
+        System.out.println(fibo(5));
     }
-    static int fibonacci(int n){
+
+    public static int fibo(int n){
+        int[] dp = new int[n+1];
+        Arrays.fill(dp, -1);
+
+        //base condition
         if(n<2){
             return n;
         }
-        return fibonacci(n-1)+fibonacci(n-2);
+        if(dp[n] != -1)
+            return dp[n];
+
+        return dp[n]= fibo(n-1) + fibo(n-2);
     }
 }
